@@ -1,0 +1,16 @@
+*.classpath
+*.project
+*.settings
+*.factorypath
+*.DS_Store
+target/
+bin/
+generated-sources/
+.idea/
+*.iml
+*.ipr
+*.versionsBackup
+*.orig
+test-output
+/kotlin/.kotlintest/
+/console/dependency-reduced-pom.xml
