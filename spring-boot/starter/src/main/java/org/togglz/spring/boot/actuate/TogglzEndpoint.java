@@ -110,13 +110,21 @@ public class TogglzEndpoint {
 
         if (enabled != null) {
             featureState.setEnabled(enabled);
+            System.out.println("Enabled set to: " + enabled);
         }
         if (strategy != null) {
             featureState.setStrategyId(strategy);
+            System.out.println("Strategy set to: " + strategy);
         }
-        parameters.forEach(featureState::setParameter);
+        parameters.forEach((key, value) -> {
+            featureState.setParameter(key, value);
+            System.out.println("Parameter set: " + key + " = " + value);
+        });
 
         featureManager.setFeatureState(featureState);
+
+        // Log the final state for debugging
+        System.out.println("Final FeatureState: " + featureState);
 
         return featureState;
     }
